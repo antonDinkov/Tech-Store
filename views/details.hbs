@@ -1,4 +1,51 @@
-<div class="planet-details">
+<section class="details-hero">
+        <div class="container">
+            <h2>Laptop Details</h2>
+        </div>
+    </section>
+
+    <section class="details-content">
+        <div class="container">
+            <div class="product-details">
+                <div class="product-image">
+                    <img src="{{post.image}}" alt="Laptop">
+                </div>
+                <div class="product-info">
+                    <h3>Brand: {{post.brand}}</h3>
+                    <p><strong>Model:</strong> {{post.model}}</p>
+                    <p><strong>Hard Disk:</strong> {{post.hardDisk}}</p>
+                    <p><strong>Screen Size:</strong> {{post.screenSize}}</p>
+                    <p><strong>RAM:</strong> {{post.ram}}</p>
+                    <p><strong>Operating System:</strong> {{post.operatingSystem}}</p>
+                    <p><strong>CPU:</strong> {{post.cpu}}</p>
+                    <p><strong>GPU:</strong> {{post.gpu}}</p>
+                    <p><strong>Price:</strong> ${{post.price}}</p>
+                    <p><strong>Color:</strong> {{post.color}}</p>
+                    <p><strong>Weight:</strong> {{post.weight}}</p>
+                </div>
+            </div>
+            
+            {{#if isLoggedIn}}
+            <div class="product-actions">
+                {{#if isAuthor}}
+                <button class="btn edit"><a href="/catalog/{{post._id}}/edit">Edit</a></button>
+                <button class="btn delete"><a href="/catalog/{{post._id}}/delete">Delete</a></button>
+                {{else}}
+                    {{#if hasInteracted}}
+                        <p class="prefer-message">You've already preferred this device</p>
+                    {{else}}
+                        <button class="btn prefer"><a href="/catalog/{{post._id}}">Prefer</a></button>
+                    {{/if}}
+                {{/if}}
+            </div>
+            {{/if}}
+        </div>
+    </section>
+
+
+
+
+{{!-- <div class="planet-details">
     <img src="{{planet.image}}"
         alt="Alpha Centauri Bb" class="planet-image">
     <div class="planet-info">
@@ -26,4 +73,4 @@
         {{/if}}
     </div>
     {{/if}}
-</div>
+</div> --}}

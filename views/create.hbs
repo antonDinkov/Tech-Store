@@ -1,20 +1,86 @@
-{{#if errors}}
+<section class="create-hero">
+    <div class="container">
+        <h2>Create New Product</h2>
+        <p>Fill in the details below to add a new product to the catalog.</p>
+    </div>
+</section>
+
+<section class="create-form">
+    <div class="container">
+        <form method="post">
+            <div class="form-group">
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name="brand" {{#if data.brand}}value="{{data.brand}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" {{#if data.model}}value="{{data.model}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="hard-disk">Hard Disk:</label>
+                <input type="text" id="hard-disk" name="hardDisk" {{#if data.hardDisk}}value="{{data.hardDisk}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="screen-size">Screen Size:</label>
+                <input type="text" id="screen-size" name="screenSize" {{#if data.screenSize}}value="{{data.screenSize}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="ram">RAM:</label>
+                <input type="text" id="ram" name="ram" {{#if data.ram}}value="{{data.ram}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="operating-system">Operating System:</label>
+                <input type="text" id="operating-system" name="operatingSystem" {{#if data.operatingSystem}}value="{{data.operatingSystem}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="cpu">CPU:</label>
+                <input type="text" id="cpu" name="cpu" {{#if data.cpu}}value="{{data.cpu}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="gpu">GPU:</label>
+                <input type="text" id="gpu" name="gpu" {{#if data.gpu}}value="{{data.gpu}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" {{#if data.price}}value="{{data.price}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" {{#if data.color}}value="{{data.color}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight:</label>
+                <input type="text" id="weight" name="weight" {{#if data.weight}}value="{{data.weight}}" {{/if}}>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label>
+                <input type="text" id="image" name="image" {{#if data.image}}value="{{data.image}}" {{/if}}>
+            </div>
+            <button type="submit" class="btn">Create Product</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+{{!-- {{#if errors}}
 <div class="error-containers">
     {{#each errors}}
-        <p>{{this}}</p>
+    <p>{{this}}</p>
     {{/each}}
 </div>
-{{/if}}
+{{/if}} --}}
 
-<form class="planet-form" method="post">
+{{!-- <form class="planet-form" method="post">
     <label for="name">Name of Planet:</label>
-    <input type="text" id="name" name="name" {{#if data.name}}value="{{data.name}}"{{/if}}>
+    <input type="text" id="name" name="name" {{#if data.name}}value="{{data.name}}" {{/if}}>
 
     <label for="age">Age (in billion years):</label>
-    <input type="number" step="any" id="age" name="age" {{#if data.age}}value="{{data.age}}"{{/if}}>
+    <input type="number" step="any" id="age" name="age" {{#if data.age}}value="{{data.age}}" {{/if}}>
 
     <label for="solarSystem">Solar System:</label>
-    <input type="text" id="solarSystem" name="system" {{#if data.system}}value="{{data.system}}"{{/if}}>
+    <input type="text" id="solarSystem" name="system" {{#if data.system}}value="{{data.system}}" {{/if}}>
 
     <label for="type">Type:</label>
     <select id="type" name="type">
@@ -25,10 +91,10 @@
     </select>
 
     <label for="moons">Moons (count):</label>
-    <input type="number" id="moons" name="moons" {{#if data.moons}}value="{{data.moons}}"{{/if}}>
+    <input type="number" id="moons" name="moons" {{#if data.moons}}value="{{data.moons}}" {{/if}}>
 
     <label for="size">Size (in km):</label>
-    <input type="number" step="any" id="size" name="size" {{#if data.size}}value="{{data.size}}"{{/if}}>
+    <input type="number" step="any" id="size" name="size" {{#if data.size}}value="{{data.size}}" {{/if}}>
 
     <label for="rings">Rings:</label>
     <select id="rings" name="rings">
@@ -38,10 +104,11 @@
     </select>
 
     <label for="description">Description:</label>
-    <textarea id="description" name="description" rows="4">{{#if data.description}}{{data.description}}{{/if}}</textarea>
+    <textarea id="description" name="description"
+        rows="4">{{#if data.description}}{{data.description}}{{/if}}</textarea>
 
     <label for="image">Image URL:</label>
-    <input type="url" id="image" name="image" {{#if data.image}}value="{{data.image}}"{{/if}}>
+    <input type="url" id="image" name="image" {{#if data.image}}value="{{data.image}}" {{/if}}>
 
     <button type="submit">Add Planet</button>
-</form>
+</form> --}}

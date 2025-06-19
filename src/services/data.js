@@ -21,16 +21,19 @@ async function getByIdKey(id, key) {
 
 async function create(data, authorId) {
     const record = new Data({
-        name: data.name,
-        age: Number(data.age),
-        system: data.system,
-        type: data.type,
-        moons: Number(data.moons),
-        size: Number(data.size),
-        rings: data.rings,
-        description: data.description,
+        brand: data.brand,
+        model: data.model,
+        hardDisk: data.hardDisk,
+        screenSize: data.screenSize,
+        ram: data.ram,
+        operatingSystem: data.operatingSystem,
+        cpu: data.cpu,
+        gpu: data.gpu,
+        price: Number(data.price),
+        color: data.color,
+        weight: data.weight,
         image: data.image,
-        likeList: [],
+        preferredList: [],
         owner: authorId
 
     });
@@ -52,15 +55,18 @@ async function update(id, userId, newData) {
     };
 
     //TODO replace with real properties
-    record.name = newData.name,
-        record.age = Number(newData.age),
-        record.system = newData.system,
-        record.type = newData.type,
-        record.moons = Number(newData.moons),
-        record.size = Number(newData.size),
-        record.rings = newData.rings,
-        record.description = newData.description,
-        record.image = newData.image,
+        record.brand= newData.brand;
+        record.model= newData.model;
+        record.hardDisk= newData.hardDisk;
+        record.screenSize= newData.screenSize;
+        record.ram= newData.ram;
+        record.operatingSystem= newData.operatingSystem;
+        record.cpu= newData.cpu;
+        record.gpu= newData.gpu;
+        record.price= Number(newData.price);
+        record.color= newData.color;
+        record.weight= newData.weight;
+        record.image= newData.image;
 
     await record.save();
 
