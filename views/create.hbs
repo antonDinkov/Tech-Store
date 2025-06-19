@@ -1,0 +1,47 @@
+{{#if errors}}
+<div class="error-containers">
+    {{#each errors}}
+        <p>{{this}}</p>
+    {{/each}}
+</div>
+{{/if}}
+
+<form class="planet-form" method="post">
+    <label for="name">Name of Planet:</label>
+    <input type="text" id="name" name="name" {{#if data.name}}value="{{data.name}}"{{/if}}>
+
+    <label for="age">Age (in billion years):</label>
+    <input type="number" step="any" id="age" name="age" {{#if data.age}}value="{{data.age}}"{{/if}}>
+
+    <label for="solarSystem">Solar System:</label>
+    <input type="text" id="solarSystem" name="system" {{#if data.system}}value="{{data.system}}"{{/if}}>
+
+    <label for="type">Type:</label>
+    <select id="type" name="type">
+        <option value="---" selected>---</option>
+        <option value="Inner" {{#if (eq data.type 'Inner' )}}selected{{/if}}>Inner</option>
+        <option value="Outer" {{#if (eq data.type 'Outer' )}}selected{{/if}}>Outer</option>
+        <option value="Dwarf" {{#if (eq data.type 'Dwarf' )}}selected{{/if}}>Dwarf</option>
+    </select>
+
+    <label for="moons">Moons (count):</label>
+    <input type="number" id="moons" name="moons" {{#if data.moons}}value="{{data.moons}}"{{/if}}>
+
+    <label for="size">Size (in km):</label>
+    <input type="number" step="any" id="size" name="size" {{#if data.size}}value="{{data.size}}"{{/if}}>
+
+    <label for="rings">Rings:</label>
+    <select id="rings" name="rings">
+        <option value="---" selected>---</option>
+        <option value="Yes" {{#if (eq data.rings 'Yes' )}}selected{{/if}}>Yes</option>
+        <option value="No" {{#if (eq data.rings 'No' )}}selected{{/if}}>No</option>
+    </select>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4">{{#if data.description}}{{data.description}}{{/if}}</textarea>
+
+    <label for="image">Image URL:</label>
+    <input type="url" id="image" name="image" {{#if data.image}}value="{{data.image}}"{{/if}}>
+
+    <button type="submit">Add Planet</button>
+</form>
