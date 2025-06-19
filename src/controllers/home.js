@@ -154,9 +154,9 @@ homeRouter.get('/catalog/:id/delete', isOwner(), async (req, res) => {
     }
 });
 
-homeRouter.get('/catalog/:id/like', hasInteracted(), async (req, res) => {
+homeRouter.get('/catalog/:id/interact', hasInteracted(), async (req, res) => {
     try {
-        await interact(req.params.id, req.user._id);
+        await interact(req.params.id, req.user._id, "preferredList");
         res.redirect(`/catalog/${req.params.id}`);
     } catch (err) {
         res.render('404', { title: 'Error' });
