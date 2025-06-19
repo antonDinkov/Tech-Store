@@ -2,7 +2,7 @@ const { User } = require('../models/User');
 const bcrypt = require('bcrypt');
 
 //TODO set identity prop name based on exam description
-const identityName = 'username';
+const identityName = 'email';
 
 async function register(identity, email, password) {
     
@@ -22,7 +22,7 @@ async function register(identity, email, password) {
         await user.save();
     } catch (err) {
         if (err.code == 11000) {
-            throw new Error("This email is already in use");
+            throw new Error("This username is already in use");
         };
         throw err;
     }

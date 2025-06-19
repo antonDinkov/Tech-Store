@@ -40,7 +40,7 @@ userRouter.get('/login', isGuest(), (req, res) => {
     res.render('login', { title: 'Login'});
 });
 userRouter.post('/login', isGuest(),
-    body('email').trim().isLength({ min: 2, max: 20 }).withMessage('Email must be atleast 10 characters long'),
+    body('email').trim().isLength({ min: 10 }).withMessage('Email must be atleast 10 characters long'),
     body('password').trim().isLength({ min: 4 }).withMessage('Password must be atleast 4 characters long'),
     async (req, res) => {
         try {
