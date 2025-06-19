@@ -23,7 +23,7 @@ userRouter.post('/register', isGuest(),
                 throw validation.array();
             };
             
-            const userData = await register(req.body.username, req.body.email, req.body.password);
+            const userData = await register(req.body.email, req.body.username, req.body.password);
 
             
             const token = createToken(userData);

@@ -16,7 +16,7 @@ homeRouter.get('/', async (req, res) => {
     const lastThree = await getLastThree();
 
 
-    res.render('home', { title: 'Home', lastThree });
+    res.render('home', { title: 'Home', posts: lastThree });
 });
 
 homeRouter.get('/about', (req, res) => {
