@@ -57,7 +57,7 @@ userRouter.post('/login', isGuest(),
 
             res.redirect('/');
         } catch (err) {
-            res.render('login', { data: { username: req.body.email }, errors: parseError(err).errors });
+            res.render('login', { data: { email: req.body.email }, errors: parseError(err).errors });
         }
     });
 
