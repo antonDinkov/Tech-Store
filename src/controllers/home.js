@@ -163,6 +163,23 @@ homeRouter.get('/catalog/:id/interact', hasInteracted(), async (req, res) => {
     }
 });
 
+homeRouter.get('/profile', isUser(), async (req, res) => {
+    const { _id, username, email} = req.user;
+    const posts = await getAll();
+    const ownerTo = posts.filter(p => p.owner.toString() == _id.toString());
+    console.log('User is owner to: ', ownerTo);
+    const ownerToResult = ownerTo.length > 0 ? ownerTo : null;
+    
+    const interactedWith = posts.filter((p) => {
+        const array = p.preferredList.map(p => p.toString());
+        return array.includes(_id.toString())
+    });
+    console.log('User has interacted with: ', interactedWith);
+    const interactedWithResult = interactedWith.length > 0 ? interactedWith : null;
+
+    res.render('profile', { title: 'Profile', _id, username, email, ownerToResult, interactedWithResult })
+});
+
 homeRouter.get('/search', async (req, res) => {
     const { searchName = '', searchSystem = '' } = req.query;
     let planets = await getAll();

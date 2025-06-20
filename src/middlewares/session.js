@@ -8,6 +8,7 @@ function session() {
             try {
                 const sessionData = verifyToken(token);
                 req.user = {
+                    username: sessionData.username,
                     email: sessionData.email,
                     _id: sessionData._id
                 };
