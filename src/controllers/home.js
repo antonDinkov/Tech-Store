@@ -177,7 +177,7 @@ homeRouter.get('/profile', isUser(), async (req, res) => {
     console.log('User has interacted with: ', interactedWith);
     const interactedWithResult = interactedWith.length > 0 ? interactedWith : null;
 
-    res.render('profile', { title: 'Profile', _id, username, email, ownerToResult, interactedWithResult })
+    res.render('profile', { title: 'Profile', _id, username, email, ownerToResult, interactedWithResult });
 });
 
 homeRouter.get('/search', async (req, res) => {
